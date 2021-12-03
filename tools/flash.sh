@@ -20,7 +20,7 @@ case "${PLATFORM}" in
         binary_name=cortex-m4.elf
         tockload=n
         ;;
-    "nucleo_f429zi"|"nucleo_f446re")
+    "nucleo_f429zi"|"nucleo_f446re"|"stm32f429idiscovery")
         tockloader_flags=""
         binary_name=cortex-m4.elf
         tockload=n

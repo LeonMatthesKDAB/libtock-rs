@@ -19,6 +19,7 @@ usage:
 	@echo " - imxrt1050"
 	@echo " - apollo3"
 	@echo " - stm32f3discovery"
+	@echo " - stm32f429idiscovery"
 	@echo
 	@echo "Run 'make setup' to setup Rust to build libtock-rs."
 	@echo "Run 'make <board>' to build libtock-rs for that board"
@@ -156,9 +157,17 @@ flash-hail:
 nucleo_f429zi:
 	PLATFORM=nucleo_f429zi cargo build $(release) --target=thumbv7em-none-eabi --examples $(features)
 
+.PHONY: stm32f429idiscovery
+stm32f429idiscovery:
+	PLATFORM=stm32f429idiscovery cargo build $(release) --target=thumbv7em-none-eabi --examples $(features)
+
 .PHONY: flash-nucleo_f429zi
 flash-nucleo_f429zi:
 	PLATFORM=nucleo_f429zi cargo run $(release) --target=thumbv7em-none-eabi --example $(EXAMPLE) $(features)
+
+.PHONY: flash-stm32f429idiscovyer
+flash-stm32f429idiscovery:
+	PLATFORM=stm32f429idiscovery cargo run $(release) --target=thumbv7em-none-eabi --example $(EXAMPLE) $(features)
 
 .PHONY: nucleo_f446re
 nucleo_f446re:
