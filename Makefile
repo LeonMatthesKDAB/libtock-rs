@@ -165,7 +165,7 @@ stm32f429idiscovery:
 flash-nucleo_f429zi:
 	PLATFORM=nucleo_f429zi cargo run $(release) --target=thumbv7em-none-eabi --example $(EXAMPLE) $(features)
 
-.PHONY: flash-stm32f429idiscovyer
+.PHONY: flash-stm32f429idiscovery
 flash-stm32f429idiscovery:
 	PLATFORM=stm32f429idiscovery cargo run $(release) --target=thumbv7em-none-eabi --example $(EXAMPLE) $(features)
 
